@@ -58,9 +58,13 @@ class ToDoList extends Component {
         });
         return (
             <div className='container'>
-                <h1>To Do List</h1>
-                <ToDoForm createTodo={this.create} />
+                <div>
+                    <h1>
+                        To Do List<span>A React App</span>
+                    </h1>
+                </div>
                 <ul>{todos}</ul>
+                <ToDoForm createTodo={this.create} />
             </div>
         );
     }
