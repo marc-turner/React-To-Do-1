@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-import Todo from './Todo';
+import { v4 as uuidv4 } from 'uuid';
 
 class TodoForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            item: '',
+            task: '',
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleSubmit(e) {
         e.preventDefault();
+        const newTask = { ...this.state, id: uuidv4() };
+        this.props.createTodo(newTask);
         this.setState({
-            item: '',
+            task: '',
         });
     }
     handleChange(e) {
@@ -24,17 +26,17 @@ class TodoForm extends Component {
     render() {
         return (
             <div>
-                <form>
-                    <label htmlFor='item'>Todo Item</label>
+                <form onSubmit={this.handleSubmit}>
+                    <label htmlFor='task'>Todo Item</label>
                     <input
                         type='text'
-                        name='item'
-                        value={this.state.item}
+                        name='task'
+                        id='task'
+                        value={this.state.task}
                         onChange={this.handleChange}
                     />
                     <button>Submit</button>
                 </form>
-                <Todo />
             </div>
         );
     }

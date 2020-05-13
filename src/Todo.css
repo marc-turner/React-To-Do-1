@@ -1,0 +1,18 @@
+.Todo {
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+}
+
+.todoItem {
+    color: #fff;
+}
+
+span {
+    margin: 0 5px;
+}
