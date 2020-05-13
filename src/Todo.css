@@ -1,4 +1,4 @@
-.Todo {
+/* .Todo {
     width: 90%;
     margin: auto;
     padding: 10px;
@@ -7,12 +7,13 @@
     justify-content: space-between;
     align-items: center;
     background-color: red;
-}
+} */
 
-.todoItem {
+/* .todoItem {
     color: #fff;
-}
+} */
 
-span {
-    margin: 0 5px;
+.completed {
+    color: lightgrey;
+    text-decoration: line-through;
 }
